@@ -1,0 +1,18 @@
+name: oom
+description: A minimal Pulumi YAML program
+runtime: yaml
+config: {'pulumi:tags': {value: {'pulumi:template': yaml}}}
+variables: {}
+packages:
+  awsx: awsx@3.3.1
+  awsx2: awsx@3.3.0
+  awsx3: awsx@3.0.1
+  awsx4: awsx@3.0.0
+  awsx5: awsx@3.2.0
+  awsx6: awsx@3.1.0
+  awsx7: awsx@2.0.0
+resources:
+    username:
+        type: random:RandomPet
+outputs: {}
+

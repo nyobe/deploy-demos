@@ -1,0 +1,23 @@
+name: ${PROJECT}
+description: ${DESCRIPTION}
+runtime: yaml
+template:
+  description: A minimal Pulumi YAML program
+
+config:
+    aws:region: us-west-2
+resources: {}
+outputs:
+  azureClientConfig:
+    fn::invoke:
+      function: azure-native:authorization:getClientConfig
+      arguments: {}
+  awsClientConfig:
+    fn::invoke:
+      function: aws:getCallerIdentity
+      arguments: {}
+  # gcpClientConfig:
+  #   fn::invoke:
+  #     function: gcp:organizations:getClientConfig
+  #     arguments: {}
+
